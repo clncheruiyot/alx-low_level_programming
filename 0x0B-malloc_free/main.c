@@ -3,29 +3,21 @@
 #include <stdlib.h>
 
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
+ * main - check the code for ALX School students.
  *
- * Return: Nothing.
+ * Return: Always 0.
  */
-void simple_print_buffer(char *buffer, unsigned int size)
+int main(void)
 {
-    unsigned int i;
+    char *s;
 
-    i = 0;
-    while (i < size)
+    s = _strdup("");
+    if (s == NULL)
     {
-        if (i % 10)
-        {
-            printf(" ");
-        }
-        if (!(i % 10) && i)
-        {
-            printf("\n");
-        }
-        printf("0x%02x", buffer[i]);
-        i++;
+        printf("failed to allocate memory\n");
+        return (1);
     }
-    printf("\n");
+    printf("%s\n", s);
+    free(s);
+    return (0);
 }
